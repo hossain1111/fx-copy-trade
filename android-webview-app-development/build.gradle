@@ -1,0 +1,84 @@
+// File: app/build.gradle (Module: app)
+
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.fxcopytrade.app'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.fxcopytrade.app"
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            
+            // Signing configuration (you'll need to configure this)
+            // signingConfig signingConfigs.release
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    
+    buildFeatures {
+        viewBinding true
+    }
+    
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+    // AndroidX Core
+    implementation 'androidx.core:core:1.12.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    
+    // Material Design
+    implementation 'com.google.android.material:material:1.11.0'
+    
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // SwipeRefreshLayout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    
+    // WebKit (for WebView)
+    implementation 'androidx.webkit:webkit:1.9.0'
+    
+    // Lifecycle components
+    implementation 'androidx.lifecycle:lifecycle-runtime:2.7.0'
+    implementation 'androidx.lifecycle:lifecycle-common-java8:2.7.0'
+    
+    // Activity
+    implementation 'androidx.activity:activity:1.8.2'
+    
+    // Testing
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+}

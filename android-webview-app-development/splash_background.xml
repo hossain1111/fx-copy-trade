@@ -1,0 +1,30 @@
+<!-- File: app/src/main/res/drawable/splash_background.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="@color/gradientStart"
+                android:centerColor="@color/gradientCenter"
+                android:endColor="@color/gradientEnd"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Optional: Add overlay pattern for more depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="45"
+                android:startColor="#10FFFFFF"
+                android:centerColor="#05FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+</layer-list>

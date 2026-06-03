@@ -1,0 +1,31 @@
+<!-- File: app/src/main/res/values/strings.xml -->
+
+<resources>
+    <string name="app_name">FX Copy Trade</string>
+    <string name="tagline">Trade Smarter, Copy Better</string>
+    <string name="version">Version 1.0.0</string>
+    
+    <!-- Error messages -->
+    <string name="no_internet">No internet connection</string>
+    <string name="loading">Loading…</string>
+    <string name="error_loading">Error loading page</string>
+    
+    <!-- Dialog messages -->
+    <string name="exit_message">Do you want to exit?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="retry">Retry</string>
+    <string name="exit">Exit</string>
+    
+    <!-- Permissions -->
+    <string name="permission_denied">Permission denied. Some features may not work.</string>
+    <string name="permission_granted">Permission granted</string>
+    
+    <!-- Download -->
+    <string name="downloading">Downloading file…</string>
+    <string name="download_failed">Download failed</string>
+    
+    <!-- WebView -->
+    <string name="file_chooser_error">Cannot open file chooser</string>
+    <string name="external_app_not_installed">Required app not installed</string>
+</resources>

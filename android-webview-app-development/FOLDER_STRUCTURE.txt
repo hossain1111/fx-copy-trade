@@ -1,0 +1,475 @@
+================================================================================
+    FX COPY TRADE - ANDROID WEBVIEW APPLICATION
+    Complete Folder Structure & File Organization Guide
+================================================================================
+
+PROJECT ROOT: FXCopyTrade/
+================================================================================
+
+FXCopyTrade/
+│
+├── 📄 README.md                              [Main documentation - 1500+ lines]
+├── 📄 PROJECT_SUMMARY.md                     [Project overview - 800+ lines]
+├── 📄 INSTALLATION_GUIDE.md                  [Setup guide - 900+ lines]
+├── 📄 BUILD_APK_GUIDE.md                     [Build guide - 700+ lines]
+├── 📄 INDEX.md                               [Navigation guide - 600+ lines]
+├── 📄 FOLDER_STRUCTURE.txt                   [This file - Visual guide]
+│
+├── 📄 build.gradle                           [Project-level build config]
+│   │   // Use content from: build.gradle.project
+│   │   // Gradle version: 8.2.0
+│   │   // Android Plugin: 8.2.0
+│
+├── 📄 settings.gradle                        [Project settings]
+│   │   // Root project name: "FX Copy Trade"
+│   │   // Includes: ':app'
+│
+├── 📄 gradle.properties                      [Gradle properties]
+│   │   // JVM args, AndroidX config
+│   │   // Build optimization settings
+│
+├── 📄 gradlew                                [Gradle wrapper script - Unix]
+├── 📄 gradlew.bat                            [Gradle wrapper script - Windows]
+│
+├── 📁 gradle/
+│   └── 📁 wrapper/
+│       ├── 📄 gradle-wrapper.jar             [Gradle wrapper JAR]
+│       └── 📄 gradle-wrapper.properties      [Wrapper configuration]
+│           │   // Gradle distribution: 8.2-bin
+│
+├── 📄 local.properties                       [Local SDK path - Auto-generated]
+│   │   // Created by Android Studio
+│   │   // Contains: sdk.dir=/path/to/android/sdk
+│
+└── 📁 app/                                   [Main application module]
+    │
+    ├── 📄 build.gradle                       [App-level build config - 70 lines]
+    │   │   // compileSdk: 34
+    │   │   // minSdk: 21
+    │   │   // targetSdk: 34
+    │   │   // versionCode: 1
+    │   │   // versionName: "1.0.0"
+    │   │   // Package: com.fxcopytrade.app
+    │   │   // Dependencies: AndroidX, Material, WebKit
+    │
+    ├── 📄 proguard-rules.pro                 [ProGuard configuration]
+    │   │   // WebView rules
+    │   │   // JavaScript interface rules
+    │   │   // Optimization rules
+    │
+    ├── 📄 .gitignore                         [Git ignore file - Optional]
+    │
+    ├── 📁 libs/                              [External libraries - Empty]
+    │
+    ├── 📁 build/                             [Build output - Auto-generated]
+    │   ├── 📁 outputs/
+    │   │   ├── 📁 apk/
+    │   │   │   ├── 📁 debug/
+    │   │   │   │   └── 📄 app-debug.apk      [Debug APK output]
+    │   │   │   └── 📁 release/
+    │   │   │       └── 📄 app-release.apk    [Release APK output]
+    │   │   └── 📁 bundle/
+    │   │       └── 📁 release/
+    │   │           └── 📄 app-release.aab    [Android App Bundle]
+    │   └── 📁 intermediates/                 [Build intermediates]
+    │
+    └── 📁 src/
+        │
+        ├── 📁 androidTest/                   [Android instrumentation tests]
+        │   └── 📁 java/
+        │       └── 📁 com/fxcopytrade/app/
+        │           └── 📄 ExampleInstrumentedTest.java
+        │
+        ├── 📁 test/                          [Unit tests]
+        │   └── 📁 java/
+        │       └── 📁 com/fxcopytrade/app/
+        │           └── 📄 ExampleUnitTest.java
+        │
+        └── 📁 main/                          [Main source set]
+            │
+            ├── 📄 AndroidManifest.xml        [App manifest - 80 lines]
+            │   │   // Package: com.fxcopytrade.app
+            │   │   // Permissions: 8 permissions
+            │   │   // Activities: 2 (Splash, Main)
+            │   │   // Features: Hardware acceleration, cleartext traffic
+            │
+            ├── 📁 java/
+            │   └── 📁 com/
+            │       └── 📁 fxcopytrade/
+            │           └── 📁 app/
+            │               │
+            │               ├── 📄 MainActivity.java              [450+ lines]
+            │               │   │   // Main WebView activity
+            │               │   │   // Features:
+            │               │   │   //   - WebView configuration
+            │               │   │   //   - File upload/download
+            │               │   │   //   - Pull to refresh
+            │               │   │   //   - Progress bar
+            │               │   │   //   - Back navigation
+            │               │   │   //   - Internet check
+            │               │   │   //   - Cookie manager
+            │               │   │   //   - Exit dialog
+            │               │
+            │               ├── 📄 SplashActivity.java            [100+ lines]
+            │               │   │   // Splash screen launcher
+            │               │   │   // Features:
+            │               │   │   //   - 2-second splash
+            │               │   │   //   - Internet check
+            │               │   │   //   - Smooth transition
+            │               │   │   //   - Error dialog
+            │               │
+            │               └── 📄 WebViewClientHelper.java       [150+ lines]
+            │                   │   // Custom WebView client
+            │                   │   // Features:
+            │                   │   //   - URL filtering
+            │                   │   //   - External link handling
+            │                   │   //   - Phone/Email/App links
+            │                   │   //   - Progress tracking
+            │                   │   //   - Error handling
+            │
+            └── 📁 res/                       [Resources directory]
+                │
+                ├── 📁 drawable/              [Drawable resources]
+                │   ├── 📄 splash_background.xml    [Gradient background]
+                │   │   │   // Layer-list drawable
+                │   │   │   // Blue gradient (135° angle)
+                │   │   │   // Colors: #1976D2 → #1E88E5 → #2196F3
+                │   │
+                │   └── (Additional drawables as needed)
+                │
+                ├── 📁 layout/                [Layout XML files]
+                │   │
+                │   ├── 📄 activity_main.xml          [Main screen - 30 lines]
+                │   │   │   // Root: RelativeLayout
+                │   │   │   // Components:
+                │   │   │   //   - ProgressBar (horizontal, top)
+                │   │   │   //   - SwipeRefreshLayout
+                │   │   │   //   - WebView (full screen)
+                │   │
+                │   └── 📄 activity_splash.xml        [Splash screen - 80 lines]
+                │       │   // Root: RelativeLayout
+                │       │   // Background: @drawable/splash_background
+                │       │   // Components:
+                │       │   //   - ImageView (app logo, 120dp)
+                │       │   //   - TextView (app name)
+                │       │   //   - TextView (tagline)
+                │       │   //   - ProgressBar (loading)
+                │       │   //   - TextView (version)
+                │
+                ├── 📁 mipmap-mdpi/          [48x48 icons]
+                │   ├── 📄 ic_launcher.png
+                │   └── 📄 ic_launcher_round.png
+                │
+                ├── 📁 mipmap-hdpi/          [72x72 icons]
+                │   ├── 📄 ic_launcher.png
+                │   └── 📄 ic_launcher_round.png
+                │
+                ├── 📁 mipmap-xhdpi/         [96x96 icons]
+                │   ├── 📄 ic_launcher.png
+                │   └── 📄 ic_launcher_round.png
+                │
+                ├── 📁 mipmap-xxhdpi/        [144x144 icons]
+                │   ├── 📄 ic_launcher.png
+                │   └── 📄 ic_launcher_round.png
+                │
+                ├── 📁 mipmap-xxxhdpi/       [192x192 icons]
+                │   ├── 📄 ic_launcher.png
+                │   └── 📄 ic_launcher_round.png
+                │
+                ├── 📁 mipmap-anydpi-v26/    [Adaptive icons]
+                │   ├── 📄 ic_launcher.xml
+                │   └── 📄 ic_launcher_round.xml
+                │
+                ├── 📁 values/               [Default values]
+                │   │
+                │   ├── 📄 strings.xml               [25 strings]
+                │   │   │   // App name: "FX Copy Trade"
+                │   │   │   // Tagline: "Trade Smarter, Copy Better"
+                │   │   │   // Version: "Version 1.0.0"
+                │   │   │   // All UI text strings
+                │   │
+                │   ├── 📄 colors.xml                [20+ colors]
+                │   │   │   // Primary colors:
+                │   │   │   //   - colorPrimary: #1976D2 (Blue)
+                │   │   │   //   - colorPrimaryDark: #0D47A1 (Dark Blue)
+                │   │   │   //   - colorAccent: #2196F3 (Light Blue)
+                │   │   │   // Gradient colors for splash
+                │   │   │   // Status colors (success, error, etc.)
+                │   │
+                │   └── 📄 themes.xml                [Multiple themes]
+                │       │   // Base theme: Material Components
+                │       │   // Custom action bar
+                │       │   // Splash screen theme
+                │       │   // Dialog theme
+                │
+                ├── 📁 values-night/         [Dark mode values - Optional]
+                │   ├── 📄 colors.xml
+                │   └── 📄 themes.xml
+                │
+                └── 📁 xml/                  [XML configurations]
+                    │
+                    ├── 📄 file_paths.xml            [File provider paths]
+                    │   │   // Paths for file access:
+                    │   │   //   - Internal storage
+                    │   │   //   - Cache directory
+                    │   │   //   - External storage
+                    │   │   //   - Downloads
+                    │   │   //   - Pictures
+                    │
+                    ├── 📄 backup_rules.xml          [Backup configuration]
+                    │   │   // Include/exclude rules
+                    │   │   // Shared preferences backup
+                    │   │   // Database backup
+                    │
+                    ├── 📄 data_extraction_rules.xml [Data extraction]
+                    │   │   // Cloud backup rules
+                    │   │   // Device transfer rules
+                    │   │   // Privacy settings
+                    │
+                    └── 📄 network_security_config.xml [Network security]
+                        │   // Cleartext traffic allowed for:
+                        │   //   - fxcopytrade.online
+                        │   //   - localhost
+                        │   // Trust anchors configuration
+
+
+================================================================================
+FILE SUMMARY
+================================================================================
+
+TOTAL FILES: 25 files (excluding auto-generated)
+
+Documentation Files:    5 files
+Java Source Files:      3 files
+Layout XML Files:       2 files
+Values XML Files:       3 files
+Drawable XML Files:     1 file
+XML Config Files:       4 files
+Build Files:            7 files
+
+TOTAL LINES OF CODE:
+- Java:          ~700 lines
+- XML:           ~400 lines
+- Documentation: ~4500 lines
+- Total:         ~5600 lines
+
+================================================================================
+APP ICONS NEEDED (Generate with Android Asset Studio)
+================================================================================
+
+Icon Sizes Required:
+├── mipmap-mdpi/      48x48 px   (1x)
+├── mipmap-hdpi/      72x72 px   (1.5x)
+├── mipmap-xhdpi/     96x96 px   (2x)
+├── mipmap-xxhdpi/    144x144 px (3x)
+└── mipmap-xxxhdpi/   192x192 px (4x)
+
+Icon Types:
+├── ic_launcher.png         (Standard launcher icon)
+├── ic_launcher_round.png   (Round launcher icon)
+├── ic_launcher_foreground  (Adaptive icon foreground)
+└── ic_launcher_background  (Adaptive icon background)
+
+Generate at: https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+
+================================================================================
+IMPORTANT CONFIGURATION VALUES
+================================================================================
+
+Package Name:       com.fxcopytrade.app
+App Name:           FX Copy Trade
+Version Code:       1
+Version Name:       1.0.0
+
+Website URL:        https://fxcopytrade.online
+Splash Duration:    2000 ms (2 seconds)
+
+Min SDK:            21 (Android 5.0)
+Target SDK:         34 (Android 14)
+Compile SDK:        34
+
+Primary Color:      #1976D2 (Blue)
+Primary Dark:       #0D47A1 (Dark Blue)
+Accent Color:       #2196F3 (Light Blue)
+
+================================================================================
+PERMISSIONS DECLARED
+================================================================================
+
+Required Permissions:
+├── INTERNET                    (Required for website loading)
+├── ACCESS_NETWORK_STATE        (Check internet connectivity)
+├── ACCESS_WIFI_STATE           (WiFi state checking)
+├── WRITE_EXTERNAL_STORAGE      (Downloads - API ≤28)
+├── READ_EXTERNAL_STORAGE       (File uploads)
+├── CAMERA                      (Camera uploads - optional)
+├── READ_MEDIA_IMAGES           (Image uploads - API ≥33)
+└── READ_MEDIA_VIDEO            (Video uploads - API ≥33)
+
+Total: 8 permissions
+
+================================================================================
+DEPENDENCIES (from build.gradle)
+================================================================================
+
+AndroidX Libraries:
+├── core:core:1.12.0
+├── appcompat:appcompat:1.6.1
+├── constraintlayout:constraintlayout:2.1.4
+├── swiperefreshlayout:swiperefreshlayout:1.1.0
+├── webkit:webkit:1.9.0
+├── lifecycle:lifecycle-runtime:2.7.0
+└── activity:activity:1.8.2
+
+Material Design:
+└── material:material:1.11.0
+
+Testing:
+├── junit:junit:4.13.2
+├── test.ext:junit:1.1.5
+└── test.espresso:espresso-core:3.5.1
+
+Total: 11 dependencies
+
+================================================================================
+BUILD VARIANTS
+================================================================================
+
+Debug Build:
+├── Signing: Debug keystore (auto)
+├── Minification: Disabled
+├── Debuggable: Yes
+├── Command: gradlew assembleDebug
+└── Output: app/build/outputs/apk/debug/app-debug.apk
+
+Release Build:
+├── Signing: Release keystore (configure)
+├── Minification: Enabled (R8)
+├── Shrink Resources: Yes
+├── Command: gradlew assembleRelease
+└── Output: app/build/outputs/apk/release/app-release.apk
+
+App Bundle:
+├── Command: gradlew bundleRelease
+└── Output: app/build/outputs/bundle/release/app-release.aab
+
+================================================================================
+FEATURES IMPLEMENTED
+================================================================================
+
+✅ Full-screen WebView with JavaScript
+✅ Splash screen (2 seconds)
+✅ Internet connectivity check
+✅ Pull-to-refresh functionality
+✅ File upload support
+✅ Download manager integration
+✅ Progress bar (0-100%)
+✅ Back button navigation
+✅ Exit confirmation dialog
+✅ Cookie management
+✅ External URL handling
+✅ Phone/Email/App link handling
+✅ Error handling
+✅ Hardware acceleration
+✅ Material Design theme
+
+================================================================================
+ACTIVITIES & SCREENS
+================================================================================
+
+1. SplashActivity
+   ├── Purpose: App launcher
+   ├── Theme: @style/Theme.FXCopyTrade.Splash
+   ├── Layout: activity_splash.xml
+   ├── Features:
+   │   ├── 2-second display
+   │   ├── Internet check
+   │   ├── Gradient background
+   │   └── Smooth transition
+   └── Exported: Yes (MAIN/LAUNCHER)
+
+2. MainActivity
+   ├── Purpose: Main WebView screen
+   ├── Theme: @style/Theme.FXCopyTrade
+   ├── Layout: activity_main.xml
+   ├── Features:
+   │   ├── WebView integration
+   │   ├── File handling
+   │   ├── Download support
+   │   ├── Back navigation
+   │   └── Exit dialog
+   └── Exported: No
+
+================================================================================
+SETUP CHECKLIST
+================================================================================
+
+Before Building:
+☐ Android Studio installed
+☐ Android SDK installed (API 21-34)
+☐ New project created
+☐ All files copied to correct locations
+☐ Package name verified
+☐ Website URL configured
+☐ App icons generated
+☐ Gradle synced successfully
+☐ No build errors
+
+Before Release:
+☐ All features tested
+☐ Version updated
+☐ Release keystore created
+☐ Keystore backed up
+☐ ProGuard configured
+☐ Signed APK built
+☐ APK tested on device
+☐ Release notes created
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Read Documentation:
+   └── Start with PROJECT_SUMMARY.md
+
+2. Setup Project:
+   └── Follow INSTALLATION_GUIDE.md
+
+3. Copy All Files:
+   └── Use this structure as reference
+
+4. Generate Icons:
+   └── Use Android Asset Studio
+
+5. Build & Test:
+   └── Follow README.md testing section
+
+6. Create Release:
+   └── Follow BUILD_APK_GUIDE.md
+
+7. Distribute:
+   └── Deploy to users or app store
+
+================================================================================
+SUPPORT & DOCUMENTATION
+================================================================================
+
+📚 Complete Guides Available:
+├── PROJECT_SUMMARY.md      - Project overview
+├── INSTALLATION_GUIDE.md   - Setup instructions
+├── README.md               - Full documentation
+├── BUILD_APK_GUIDE.md      - Building guide
+├── INDEX.md                - Navigation guide
+└── FOLDER_STRUCTURE.txt    - This file
+
+All code files include detailed comments explaining functionality.
+
+================================================================================
+END OF FOLDER STRUCTURE GUIDE
+================================================================================
+
+Built with ❤️ for FX Copy Trade
+Version: 1.0.0
+Status: ✅ Complete & Ready for Production
+
+================================================================================

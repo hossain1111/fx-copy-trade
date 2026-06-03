@@ -1,0 +1,12 @@
+<!-- File: app/src/main/res/xml/backup_rules.xml -->
+
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Exclude specific files or directories from backup -->
+    <exclude domain="sharedpref" path="device.xml"/>
+    <exclude domain="database" path="temp.db"/>
+    
+    <!-- Include specific files or directories in backup -->
+    <include domain="file" path="."/>
+    <include domain="sharedpref" path="."/>
+</full-backup-content>

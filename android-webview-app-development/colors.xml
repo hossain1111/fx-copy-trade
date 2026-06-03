@@ -1,0 +1,38 @@
+<!-- File: app/src/main/res/values/colors.xml -->
+
+<resources>
+    <!-- Primary brand colors -->
+    <color name="colorPrimary">#1976D2</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorAccent">#2196F3</color>
+    
+    <!-- Secondary colors -->
+    <color name="colorSecondary">#03DAC5</color>
+    <color name="colorSecondaryDark">#018786</color>
+    
+    <!-- Background colors -->
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="backgroundDark">#121212</color>
+    
+    <!-- Text colors -->
+    <color name="textColorPrimary">#212121</color>
+    <color name="textColorSecondary">#757575</color>
+    <color name="textColorHint">#9E9E9E</color>
+    <color name="textColorLight">#FFFFFF</color>
+    
+    <!-- Gradient colors for splash -->
+    <color name="gradientStart">#1976D2</color>
+    <color name="gradientCenter">#1E88E5</color>
+    <color name="gradientEnd">#2196F3</color>
+    
+    <!-- Other colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    
+    <!-- Status colors -->
+    <color name="success">#4CAF50</color>
+    <color name="error">#F44336</color>
+    <color name="warning">#FF9800</color>
+    <color name="info">#2196F3</color>
+</resources>

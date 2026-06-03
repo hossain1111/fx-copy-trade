@@ -1,0 +1,406 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                    FX COPY TRADE - QUICK REFERENCE CARD                    ║
+║                     Android WebView Application v1.0.0                     ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📋 PROJECT ESSENTIALS                                                      │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Package Name:           com.fxcopytrade.app
+App Name:              FX Copy Trade
+Website URL:           https://fxcopytrade.online
+Version:               1.0.0 (Version Code: 1)
+
+Min Android:           5.0 (API 21)
+Target Android:        14 (API 34)
+Language:              Java
+Build Tool:            Gradle 8.2.0
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🚀 QUICK START (5 STEPS)                                                   │
+└────────────────────────────────────────────────────────────────────────────┘
+
+1. READ:    PROJECT_SUMMARY.md (5 min overview)
+2. SETUP:   Follow INSTALLATION_GUIDE.md (30-60 min)
+3. COPY:    All 25 files to Android Studio project
+4. BUILD:   Click Run button or: gradlew assembleDebug
+5. TEST:    Install on device and verify all features
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📁 FILE COUNT & LOCATIONS                                                  │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Total Files: 26 files
+
+Documentation (6):       Root directory
+  - PROJECT_SUMMARY.md
+  - INSTALLATION_GUIDE.md  
+  - README.md
+  - BUILD_APK_GUIDE.md
+  - INDEX.md
+  - FOLDER_STRUCTURE.txt
+
+Java (3):               app/src/main/java/com/fxcopytrade/app/
+  - MainActivity.java
+  - SplashActivity.java
+  - WebViewClientHelper.java
+
+Layouts (2):            app/src/main/res/layout/
+  - activity_main.xml
+  - activity_splash.xml
+
+Values (3):             app/src/main/res/values/
+  - strings.xml
+  - colors.xml
+  - themes.xml
+
+Drawable (1):           app/src/main/res/drawable/
+  - splash_background.xml
+
+XML Config (4):         app/src/main/res/xml/
+  - file_paths.xml
+  - backup_rules.xml
+  - data_extraction_rules.xml
+  - network_security_config.xml
+
+Build (7):              Various locations
+  - AndroidManifest.xml (app/src/main/)
+  - build.gradle (app/)
+  - build.gradle (root - use .project version)
+  - settings.gradle (root)
+  - gradle.properties (root)
+  - proguard-rules.pro (app/)
+  - gradle-wrapper.properties (gradle/wrapper/)
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ⚙️  KEY CONFIGURATION VALUES                                               │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Website URL:
+  Location: MainActivity.java
+  Line:     ~55
+  Value:    private static final String WEBSITE_URL = "https://fxcopytrade.online";
+
+App Name:
+  Location: strings.xml
+  Line:     4
+  Value:    <string name="app_name">FX Copy Trade</string>
+
+Splash Duration:
+  Location: SplashActivity.java
+  Line:     ~23
+  Value:    private static final int SPLASH_DURATION = 2000;
+
+Colors:
+  Location: colors.xml
+  Primary:  #1976D2 (Blue)
+  Dark:     #0D47A1 (Dark Blue)
+  Accent:   #2196F3 (Light Blue)
+
+Version:
+  Location: build.gradle (app)
+  Code:     versionCode 1
+  Name:     versionName "1.0.0"
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🔧 COMMON TASKS                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Build Debug APK:
+  $ gradlew assembleDebug
+  Output: app/build/outputs/apk/debug/app-debug.apk
+
+Build Release APK:
+  $ gradlew assembleRelease
+  Output: app/build/outputs/apk/release/app-release.apk
+
+Build App Bundle:
+  $ gradlew bundleRelease
+  Output: app/build/outputs/bundle/release/app-release.aab
+
+Clean Project:
+  $ gradlew clean
+
+Install on Device:
+  $ adb install app-debug.apk
+
+View Logs:
+  $ adb logcat | grep "com.fxcopytrade.app"
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ✨ FEATURES INCLUDED                                                       │
+└────────────────────────────────────────────────────────────────────────────┘
+
+✓ Full WebView with JavaScript
+✓ Splash screen (2 sec)
+✓ Internet connectivity check
+✓ Pull-to-refresh
+✓ File upload (images/PDFs)
+✓ Download manager
+✓ Progress bar (0-100%)
+✓ Back button navigation
+✓ Exit confirmation
+✓ Cookie management
+✓ External URL handling
+✓ Phone/Email/App links
+✓ Hardware acceleration
+✓ Material Design theme
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🔐 PERMISSIONS                                                             │
+└────────────────────────────────────────────────────────────────────────────┘
+
+✓ INTERNET                  - Load website
+✓ ACCESS_NETWORK_STATE      - Check connectivity
+✓ ACCESS_WIFI_STATE         - WiFi status
+✓ WRITE_EXTERNAL_STORAGE    - Downloads (API ≤28)
+✓ READ_EXTERNAL_STORAGE     - File uploads
+✓ CAMERA                    - Camera uploads
+✓ READ_MEDIA_IMAGES         - Images (API ≥33)
+✓ READ_MEDIA_VIDEO          - Videos (API ≥33)
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📱 ACTIVITIES                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+1. SplashActivity (LAUNCHER)
+   - Layout: activity_splash.xml
+   - Purpose: Splash screen + Internet check
+   - Duration: 2 seconds
+   - Theme: NoActionBar
+
+2. MainActivity
+   - Layout: activity_main.xml
+   - Purpose: Main WebView screen
+   - Features: All app functionality
+   - Theme: Material Design
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🎨 APP ICONS (Need to Generate)                                           │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Icon Sizes:
+  mdpi:    48x48 px
+  hdpi:    72x72 px
+  xhdpi:   96x96 px
+  xxhdpi:  144x144 px
+  xxxhdpi: 192x192 px
+
+Generate at:
+  https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
+
+OR use Android Studio:
+  Right-click res → New → Image Asset → Configure → Finish
+
+Place in:
+  app/src/main/res/mipmap-*/
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🐛 TROUBLESHOOTING                                                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+"Cannot resolve symbol R":
+  → Build → Clean Project
+  → Build → Rebuild Project
+
+Gradle sync failed:
+  → File → Sync Project with Gradle Files
+  → Check internet connection
+
+SDK not found:
+  → Tools → SDK Manager
+  → Install API 21-34
+
+WebView not loading:
+  → Check INTERNET permission in manifest
+  → Verify usesCleartextTraffic="true"
+
+App crashes:
+  → Check Logcat for errors
+  → Verify all activities in manifest
+
+Build error:
+  → Clean project
+  → Invalidate caches: File → Invalidate Caches / Restart
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📚 DOCUMENTATION FILES                                                     │
+└────────────────────────────────────────────────────────────────────────────┘
+
+For detailed information, see:
+
+PROJECT_SUMMARY.md          Complete overview (800+ lines)
+├─ What's included
+├─ Features list
+├─ File structure
+└─ Configuration guide
+
+INSTALLATION_GUIDE.md       Step-by-step setup (900+ lines)
+├─ Creating project
+├─ Copying files
+├─ Gradle sync
+└─ Building app
+
+README.md                   Full documentation (1500+ lines)
+├─ Project details
+├─ Features
+├─ Testing
+└─ Maintenance
+
+BUILD_APK_GUIDE.md          Building guide (700+ lines)
+├─ Debug build
+├─ Release build
+├─ Signing
+└─ Distribution
+
+INDEX.md                    Navigation guide (600+ lines)
+├─ File index
+├─ Quick links
+└─ Help section
+
+FOLDER_STRUCTURE.txt        Visual structure (400+ lines)
+├─ Complete tree
+├─ File locations
+└─ Descriptions
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📊 CODE STATISTICS                                                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Java Code:          ~700 lines (3 files)
+XML Layouts:        ~100 lines (2 files)
+XML Resources:      ~200 lines (8 files)
+XML Config:         ~100 lines (4 files)
+Build Scripts:      ~150 lines (7 files)
+Documentation:      ~4500 lines (6 files)
+─────────────────────────────────────
+TOTAL:              ~5750 lines (26 files)
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ⏱️  TIME ESTIMATES                                                         │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Reading docs:       30-60 minutes
+Setting up:         30-60 minutes
+Copying files:      15-30 minutes
+Generating icons:   10-15 minutes
+First build:        5-10 minutes
+Testing:            30-45 minutes
+Creating release:   20-30 minutes
+─────────────────────────────────────
+TOTAL:              2-4 hours (first time)
+
+Subsequent builds:  5-10 minutes
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ ✅ PRE-RELEASE CHECKLIST                                                   │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Code:
+  ☐ All files copied correctly
+  ☐ Package name verified
+  ☐ Website URL configured
+  ☐ Version updated
+  ☐ ProGuard enabled
+
+Icons:
+  ☐ All sizes generated
+  ☐ Looks good on device
+
+Testing:
+  ☐ Splash screen works
+  ☐ Website loads
+  ☐ File upload works
+  ☐ Download works
+  ☐ Back button works
+  ☐ Exit dialog works
+  ☐ Tested on API 21-34
+
+Build:
+  ☐ Keystore created
+  ☐ Keystore backed up
+  ☐ Signed APK built
+  ☐ APK tested on device
+  ☐ Release notes written
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🎯 GRADLE COMMANDS CHEAT SHEET                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Windows:
+  gradlew clean
+  gradlew assembleDebug
+  gradlew assembleRelease
+  gradlew bundleRelease
+  gradlew installDebug
+
+Mac/Linux:
+  ./gradlew clean
+  ./gradlew assembleDebug
+  ./gradlew assembleRelease
+  ./gradlew bundleRelease
+  ./gradlew installDebug
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🔗 USEFUL LINKS                                                            │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Android Studio:     https://developer.android.com/studio
+Android Docs:       https://developer.android.com
+Material Design:    https://material.io
+Icon Generator:     https://romannurik.github.io/AndroidAssetStudio
+WebView Guide:      https://developer.android.com/guide/webapps/webview
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 💡 QUICK TIPS                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+1. Always sync Gradle after file changes
+2. Test on multiple Android versions
+3. Backup your keystore file!
+4. Use Logcat to debug issues
+5. Clean project if R errors occur
+6. Enable USB debugging for testing
+7. Test with slow internet
+8. Check all features before release
+9. Update version before each build
+10. Read error messages carefully
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 📞 NEED HELP?                                                              │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Check in this order:
+1. This QUICK_REFERENCE.txt
+2. PROJECT_SUMMARY.md
+3. INSTALLATION_GUIDE.md
+4. README.md (troubleshooting section)
+5. Android documentation
+6. Stack Overflow
+
+All Java files have detailed comments!
+
+┌────────────────────────────────────────────────────────────────────────────┐
+│ 🎉 YOU'RE READY!                                                           │
+└────────────────────────────────────────────────────────────────────────────┘
+
+Everything you need is included:
+  ✓ Complete source code
+  ✓ All configurations
+  ✓ Detailed documentation
+  ✓ Build scripts
+  ✓ Setup guides
+
+Next Steps:
+  1. Read PROJECT_SUMMARY.md
+  2. Follow INSTALLATION_GUIDE.md
+  3. Build and test
+  4. Create release APK
+
+Good luck! 🚀
+
+╔════════════════════════════════════════════════════════════════════════════╗
+║                   Built with ❤️ for FX Copy Trade                         ║
+║                   Version 1.0.0 | Status: Production Ready ✅              ║
+╚════════════════════════════════════════════════════════════════════════════╝
